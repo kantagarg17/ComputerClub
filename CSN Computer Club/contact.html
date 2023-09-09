@@ -1,0 +1,129 @@
+<html> 
+   
+    <head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSN Computer Club</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        
+        
+    </head>
+    
+    <body>
+        <section class="subheader-contact">
+           
+            <nav>
+               
+                <a href="home.html"><img src="images/Logo.png" class="logo"></a>
+                <div class="head-links" id="headLinks">
+                   <i class="fa fa-times" onclick="hideMenu()" ></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                    <i class="fa fa-bars" style="float: right;" onclick="showMenu()"></i>
+                    
+            </nav>
+            <h1>Contact Us</h1>
+        </section>
+        
+        <section class="contact-us fly">
+            <div class="contact-row">
+                <div class="contact">
+                    <div>
+                       <i class="fa fa-home"></i>
+                       <span>
+                           <h5> Cambridge School, F Block, Pocket C, Sector 27, Noida, Uttar Pradesh 201301</h5>
+                       </span>
+                    </div>
+                    <div>
+                       <i class="fa fa-phone"></i>
+                       <span>
+                           <h5> +91 0120 252 8509</h5>
+                       </span>
+                    </div>
+                    <div>
+                       <i class="fa fa-envelope-o"></i>
+                       <span>
+                           <h5> info.csn@cambridgeschool.edu.in</h5>
+                       </span>
+                    </div>
+                    <div>
+                       <i class="fa fa-exclamation"></i>
+                       <span>
+                           <h5> We actually recieve your messages through this form</h5>
+                       </span>
+                    </div>
+                </div>
+                <div class="contact">
+                    <form action="POST" name="contact" data-netlify="true">
+                        <input type="text" placeholder="Name" name="name" required>
+                        <input type="email" placeholder="Email" name="email" required>
+                        <input type="subject" placeholder="Subject" name="subject" required>
+                        <textarea rows="10" placeholder="Message" name="message"></textarea>
+                        <button type="submit" class="submit-button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+           
+        <section class="footer">
+            <h3>Social Media</h3>
+            <p>We are available on various platforms of social media where we document our stories and success</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/cambridgeschoolnoida/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/Imagine.Explore.Discover.Grow.Soar"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/cambridgenoida1"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UCbROQzfuef8r_QYEUQkQpJA"><i class="fa fa-youtube"></i></a>
+            </div>
+        </section>
+            
+        <button id="backToTop">
+            <i class="fa fa-arrow-up"></i>
+        </button>
+        
+        <script>
+            var headLinks = document.getElementById("headLinks");
+            function showMenu(){
+                headLinks.classList.remove("fadeOut");
+                headLinks.style.display = "block";
+                headLinks.classList.toggle('fadeIn');
+            }
+            function hideMenu(){
+                headLinks.classList.remove("fadeIn");
+                headLinks.classList.toggle('fadeOut');
+                headLinks.addEventListener('animationend', () => {
+                    headLinks.style.display = "none";
+                }, {once: true})
+            }
+            
+            const backToTop = document.querySelector("#backToTop");
+            backToTop.addEventListener("click", function (){
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth"
+                });   
+            });
+            
+            const observer = new IntersectionObserver(entries => {
+                  entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add('flyIn');
+                    }
+                  });
+                });
+
+                observer.observe(document.querySelector('.fly'));
+            
+        </script>
+        
+    </body>
+</html>

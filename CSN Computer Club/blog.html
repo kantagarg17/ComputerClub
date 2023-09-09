@@ -1,0 +1,117 @@
+<html> 
+   
+    <head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSN Computer Club</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        
+        
+    </head>
+    
+    <body>
+        <section class="subheader-blog">
+           
+            <nav>
+               
+                <a href="home.html"><img src="images/Logo.png" class="logo"></a>
+                <div class="head-links" id="headLinks">
+                   <i class="fa fa-times" onclick="hideMenu()" ></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                    <i class="fa fa-bars" style="float: right;" onclick="showMenu()"></i>
+                    
+            </nav>
+            <h1>Blog</h1>
+        </section>
+          
+        <section class="blog-stuff fly">
+             <div class="blog-row">
+                 <div class=blog-left>
+                     <img src="images/microchip.jpg">
+                     <a href="https://jonathan-hui.medium.com/quantum-supremacy-google-sycamore-processor-6f30073a17fa">
+                     <h2>Quantum Supremacy — Google Sycamore Processor</h2>
+                     </a>
+                     <p>Google has made a major claim in quantum supremacy with the new Google quantum computer using the Sycamore Processor. In this article, we will look deeper into quantum supremacy, its significance and the Sycamore Processor itself.<br><br> The holy grail of quantum computing is to demonstrate speed supremacy over the classical computer — the computer we have today. The complexity of the RSA cryptographic algorithm was thought to be exponentially grown with the length of the key.<br><br> This algorithm safeguards our secure Internet transmission for decades. It was once using a 1024-bit long RSA key but extended to a 2048-bit RSA key in neutralizing faster computers. Since the complexity grows exponentially with every bit, we will be safe for a long while. In 1994, Shor demonstrated a quantum algorithm that cracks the RSA algorithm in polynomial time. Nevertheless, this remains theoretical since we don’t have a quantum computer to make it happens yet.<br><br> This is why the Sycamore Processor generates so much attention. Google claims it achieves quantum supremacy with its new processor. Fortunately, it has only 53 qubits which the Shor’s Algorithm may take millions of qubits to crack the 2048-bit key!</p>
+                 </div>
+                 <br><br>
+                 <div class="blog-right">
+                     <h3>Recent Posts</h3>
+                     <div>
+                        <a href="https://medium.com/@viorelsecareanu85/the-unusual-teleportation-case-of-the-pansini-brothers-2feac88092d2">
+                         <span>The Unusual Teleportation Case Of The Pansini Brothers</span></a>
+                     </div>
+                     <div>
+                         <a href="https://betterprogramming.pub/previewing-the-ide-of-the-future-ff90da52c660"><span>Previewing the IDE of the Future — Fleet</span></a>
+                     </div>
+                     <div>
+                         <a href="https://medium.com/@rabiarabbani14/the-metaverse-is-now-real-34b36a9a9a5b"><span>The Metaverse Is Now Real</span></a>
+                     </div>
+                     <div>
+                         <a href="https://medium.com/@NiftyRevolution/top-10-nft-trends-fa8522ebdf60"><span>Top 10 NFT trends</span></a>
+                     </div>
+                 </div>
+             </div>
+        </section>
+           
+        <section class="footer">
+            <h3>Social Media</h3>
+            <p>We are available on various platforms of social media where we document our stories and success</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/cambridgeschoolnoida/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/Imagine.Explore.Discover.Grow.Soar"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/cambridgenoida1"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UCbROQzfuef8r_QYEUQkQpJA"><i class="fa fa-youtube"></i></a>
+            </div>
+        </section>
+            
+        <button id="backToTop">
+            <i class="fa fa-arrow-up"></i>
+        </button>
+        
+        <script>
+            var headLinks = document.getElementById("headLinks");
+            function showMenu(){
+                headLinks.classList.remove("fadeOut");
+                headLinks.style.display = "block";
+                headLinks.classList.toggle('fadeIn');
+            }
+            function hideMenu(){
+                headLinks.classList.remove("fadeIn");
+                headLinks.classList.toggle('fadeOut');
+                headLinks.addEventListener('animationend', () => {
+                    headLinks.style.display = "none";
+                }, {once: true})
+            }
+            
+            const backToTop = document.querySelector("#backToTop");
+            backToTop.addEventListener("click", function (){
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth"
+                });   
+            });
+            
+            const observer = new IntersectionObserver(entries => {
+                  entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add('flyIn');
+                    }
+                  });
+                });
+
+                observer.observe(document.querySelector('.fly'));
+            
+        </script>
+        
+    </body>
+</html>

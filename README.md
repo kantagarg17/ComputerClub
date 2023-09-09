@@ -1,1 +1,1 @@
-# ComputerClub
+# CSN-Computer-Club

@@ -1,0 +1,163 @@
+<html> 
+   
+    <head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSN Computer Club</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        
+        
+    </head>
+    
+    <body>
+        <section class="header">
+           
+            <nav>
+               
+                <a href="home.html"><img src="images/Logo.png" class="logo"></a>
+                <div class="head-links" id="headLinks">
+                   <i class="fa fa-times" onclick="hideMenu()" ></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                    <i class="fa fa-bars" style="float: right;" onclick="showMenu()"></i>
+            </nav>
+            
+            <div class="maintext">
+                <h1>CSN Computer Club</h1>
+                <p>The Computer Club of Cambridge School Noida</p>
+            </div>
+            
+        </section>
+        
+        <section class="stories fly">
+            <h1>Success Stories</h1>
+            <h4>Some of our recent wins in competitions</h4>
+            
+            <div class="stories-row">
+                <div class="story">
+                    <h3>Talent</h3>
+                    <p> All the students in CSN Computer Club are extremely talented and have won prizes in lots of tech related competitions.</p>
+                </div>
+                <div class="story">
+                    <h3>Technika 2022</h3>
+                    <p> In a competition organized by CSI, Cambridge School Noida's students achieved several prized in various categories.</p>
+                </div>
+                <div class="story">
+                    <h3>ATL</h3>
+                    <p> ATL - Atal Thinking Lab, a sub-branch of CSN Computer Club, has made severak successful projects including Air Quality Index, A drone, etc.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="reviews">
+            <h1>Reviews</h1>
+            <h4>Read some reviews for our school</h4>
+            
+            <div class="reviews-row">
+                <div class="review">
+                    <img src="images/s.png">
+                    <div>
+                        <p>My child has been studying since Nursery and I find the environment of the school very positive. Teachers are very encouraging and supportive. They guide the kids nicely and provide feedback to us parents judiciously. School conducts enough activities to keep the kids involved and groom them for a confident self. School administration takes feedback from parents periodically and implements on them as well.</p>
+                        <h3>Simroz Fatima</h3>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+                <div class="review">
+                    <img src="images/p.png">
+                    <div>
+                        <p>Absolutely amazing experience, incredible support of teachers with innovative ideas to nourish budding minds, helps students to be future ready. I am totally impressed by the teaching methodology, technical support, and creative assignments provided to evolve students completely and make concepts easy to understand, this motivates them to strive for excellence. I recommend this school to every parent. Thank You</p>
+                        <h3>Poonam Lal</h3>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="gallery">
+            <h1>Our School</h1>
+            <h4>Take a look at our school</h4>
+            
+            <div class="gallery-row">
+                <div class="photo">
+                    <img src="images/school1.jpg">
+                </div>
+                <div class="photo">
+                    <img src="images/school2.jpg">
+                </div>
+                <div class="photo">
+                    <img src="images/school3.jpg">
+                </div>
+            </div>
+            
+        </section>
+           
+        <section class="footer">
+            <h3>Social Media</h3>
+            <p>We are available on various platforms of social media where we document our stories and success</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/cambridgeschoolnoida/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/Imagine.Explore.Discover.Grow.Soar"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/cambridgenoida1"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UCbROQzfuef8r_QYEUQkQpJA"><i class="fa fa-youtube"></i></a>
+            </div>
+        </section>
+            
+        <button id="backToTop">
+            <i class="fa fa-arrow-up"></i>
+        </button>
+        
+        <script>
+            var headLinks = document.getElementById("headLinks");
+            function showMenu(){
+                headLinks.classList.remove("fadeOut");
+                headLinks.style.display = "block";
+                headLinks.classList.toggle('fadeIn');
+            }
+            function hideMenu(){
+                headLinks.classList.remove("fadeIn");
+                headLinks.classList.toggle('fadeOut');
+                headLinks.addEventListener('animationend', () => {
+                    headLinks.style.display = "none";
+                }, {once: true})
+            }
+            
+            const backToTop = document.querySelector("#backToTop");
+            backToTop.addEventListener("click", function (){
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth"
+                });   
+            });
+            
+            const observer = new IntersectionObserver(entries => {
+                  entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add('flyIn');
+                    }
+                  });
+                });
+
+                observer.observe(document.querySelector('.fly'));
+            
+        </script>
+        
+    </body>
+</html>

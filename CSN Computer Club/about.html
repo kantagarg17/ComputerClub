@@ -1,0 +1,141 @@
+<html> 
+   
+    <head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSN Computer Club</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        
+        
+    </head>
+    
+    <body>
+        <section class="subheader">
+           
+            <nav>
+               
+                <a href="home.html"><img src="images/Logo.png" class="logo"></a>
+                <div class="head-links" id="headLinks">
+                   <i class="fa fa-times" onclick="hideMenu()" ></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                    <i class="fa fa-bars" onclick="showMenu()"></i>
+                    
+            </nav>
+            <h1>About Us</h1>
+        </section>
+        
+        <section class="about-us fly">
+            <div class="about-row">
+                <div class="about">
+                    <h1>CSN Computer Club</h1>
+                    <p>We are the computer club of Cambridge School Noida. <br> We are an exciting and flourishing community and one of the best in our school among Photography Club, Pi Club and So on.<br> We are always learning, puzzling and making new things.<br>We will help everyone present to expand their skills, learn new things and so much more...<br> So why the wait? Join us now!</p>
+                </div>
+                <div class="about">
+                    <img src="images/conference.jpg">
+                </div>
+            </div>
+        </section>
+        
+        <section class="stories fly">
+            <h1>Benefits Of Joining</h1>
+            <h4>Some of the benefits you will gain by joining us</h4>
+        
+            <div class="stories-row">
+                <div class="story">
+                    <h3>Freinds</h3>
+                    <p> You will meet lots of like minded individuals who want to learn and grow just like you.</p>
+                </div>
+                <div class="story">
+                    <h3>Learning</h3>
+                    <p> You will learn a lot. You will learn various softwares and skills including Python, HTML, CSS, etc.</p>
+                </div>
+                <div class="story">
+                    <h3>Opportunities</h3>
+                    <p> You will have a wide range of opportunites to show your talent and skill, and most importantly, to shine.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="stories fly">
+            <h1>Numbers</h1>
+            <h4>If you want numbers, here they are</h4>
+        
+            <div class="stories-row">
+                <div class="story">
+                    <h3>Years</h3>
+                    <p> <b><span class="special">2</span></b> <br><br> Years</p>
+                </div>
+                <div class="story">
+                    <h3>Students</h3>
+                    <p> <b><span class="special">55</span></b> <br><br> Members</p>
+                </div>
+                <div class="story">
+                    <h3>Competitions Won</h3>
+                    <p> <b><span class="special">21</span></b> <br><br> Prizes</p>
+                </div>
+            </div>
+        </section>
+        
+           
+        <section class="footer">
+            <h3>Social Media</h3>
+            <p>We are available on various platforms of social media where we document our stories and success</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/cambridgeschoolnoida/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/Imagine.Explore.Discover.Grow.Soar"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/cambridgenoida1"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UCbROQzfuef8r_QYEUQkQpJA"><i class="fa fa-youtube"></i></a>
+            </div>
+        </section>
+            
+        <button id="backToTop">
+            <i class="fa fa-arrow-up"></i>
+        </button>
+        
+        <script>
+            var headLinks = document.getElementById("headLinks");
+            function showMenu(){
+                headLinks.classList.remove("fadeOut");
+                headLinks.style.display = "block";
+                headLinks.classList.toggle('fadeIn');
+            }
+            function hideMenu(){
+                headLinks.classList.remove("fadeIn");
+                headLinks.classList.toggle('fadeOut');
+                headLinks.addEventListener('animationend', () => {
+                    headLinks.style.display = "none";
+                }, {once: true})
+            }
+            
+            const backToTop = document.querySelector("#backToTop");
+            backToTop.addEventListener("click", function (){
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth"
+                });   
+            });
+            
+            const observer = new IntersectionObserver(entries => {
+                  entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add('flyIn');
+                    }
+                  });
+                });
+
+                observer.observe(document.querySelector('.fly'));
+            
+        </script>
+        
+    </body>
+</html>
